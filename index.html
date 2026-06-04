@@ -11,8 +11,8 @@
       --bg:        #0e0e10;
       --surface:   #17171a;
       --border:    #2a2a2e;
-      --accent:    #f5a623;
-      --accent2:   #e8935a;
+      --accent:    #00c853;
+      --accent2:   #00e676;
       --text:      #f0ede8;
       --muted:     #8a8680;
       --radius:    14px;
@@ -143,85 +143,18 @@
       overflow: hidden;
     }
     .phone-mockup {
-      width: min(340px, 90vw);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      padding: 20px 16px;
-      box-shadow: 0 40px 120px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset;
-      position: relative;
+      width: min(300px, 80vw);
+      border-radius: 44px;
+      overflow: hidden;
+      box-shadow:
+        0 40px 100px rgba(0,0,0,0.75),
+        0 0 0 1px rgba(255,255,255,0.06) inset;
     }
-    .phone-notch {
-      width: 100px;
-      height: 28px;
-      background: var(--bg);
-      border-radius: 0 0 20px 20px;
-      margin: 0 auto 16px;
+    .phone-mockup img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    .screen {
-      background: #111113;
-      border-radius: 24px;
-      padding: 20px 16px;
-      min-height: 480px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .screen-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 6px;
-    }
-    .screen-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-    .screen-mode {
-      font-size: 0.68rem;
-      background: rgba(245,166,35,0.15);
-      color: var(--accent);
-      border: 1px solid rgba(245,166,35,0.3);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-    .song-row {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 11px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .song-num {
-      font-size: 0.72rem;
-      color: var(--muted);
-      width: 18px;
-      text-align: center;
-    }
-    .song-info { flex: 1; }
-    .song-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-    .song-meta {
-      font-size: 0.7rem;
-      color: var(--muted);
-      display: flex;
-      gap: 10px;
-      margin-top: 2px;
-    }
-    .tag {
-      background: rgba(255,255,255,0.05);
-      border-radius: 4px;
-      padding: 1px 5px;
-    }
-    .tag.capo { background: rgba(100,180,255,0.1); color: #7ec8ff; }
-    .tag.bpm  { background: rgba(180,100,255,0.1); color: #c87eff; }
-    .tag.key  { background: rgba(245,166,35,0.1);  color: var(--accent); }
 
     /* FEATURES */
     .section {
@@ -468,70 +401,7 @@
 <!-- PHONE MOCKUP -->
 <div class="mockup-strip">
   <div class="phone-mockup">
-    <div class="phone-notch"></div>
-    <div class="screen">
-      <div class="screen-header">
-        <span class="screen-title">Saturday Night</span>
-        <span class="screen-mode">Performance</span>
-      </div>
-
-      <div class="song-row">
-        <span class="song-num">1</span>
-        <div class="song-info">
-          <div class="song-name">Come Together</div>
-          <div class="song-meta">
-            <span class="tag key">A</span>
-            <span class="tag bpm">82 BPM</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="song-row" style="border-color: rgba(245,166,35,0.4); background: rgba(245,166,35,0.05);">
-        <span class="song-num" style="color:var(--accent)">2</span>
-        <div class="song-info">
-          <div class="song-name">Wagon Wheel</div>
-          <div class="song-meta">
-            <span class="tag key">G</span>
-            <span class="tag capo">Capo 2</span>
-            <span class="tag bpm">76 BPM</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="song-row">
-        <span class="song-num">3</span>
-        <div class="song-info">
-          <div class="song-name">Brown Eyed Girl</div>
-          <div class="song-meta">
-            <span class="tag key">G</span>
-            <span class="tag bpm">148 BPM</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="song-row">
-        <span class="song-num">4</span>
-        <div class="song-info">
-          <div class="song-name">Superstition</div>
-          <div class="song-meta">
-            <span class="tag key">Eb</span>
-            <span class="tag bpm">100 BPM</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="song-row">
-        <span class="song-num">5</span>
-        <div class="song-info">
-          <div class="song-name">Hotel California</div>
-          <div class="song-meta">
-            <span class="tag key">Bm</span>
-            <span class="tag capo">No capo</span>
-            <span class="tag bpm">73 BPM</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img src="screenshot.png" alt="SetNotes app showing the Michael Comeback Tour setlist" />
   </div>
 </div>
 

@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["GPPFKVP77P.com.bardkristiankylland.setnotes"],
+        "components": [
+          { "/": "/s*" }
+        ]
+      }
+    ]
+  }
+}

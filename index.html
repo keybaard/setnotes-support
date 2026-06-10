@@ -9,7 +9,7 @@
 
     :root {
       --bg:        #0e0e10;
-      --surface:   #17171a;
+      --surface:   #000001;
       --border:    #2a2a2e;
       --accent:    #00c853;
       --accent2:   #00e676;
@@ -497,6 +497,95 @@
     Download on the App Store
   </a>
 </section>
+
+<!-- 1. DEN DISKRÉ KNAPPEN NEDERST I HJØRNET -->
+<button id="privacyBtn" style="
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #6b7280; /* Gråfarge */
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: 0.7;
+    z-index: 9999;
+">Privacy Policy</button>
+
+<!-- 2. POP-UP VINDUT (MODAL) -->
+<div id="privacyModal" style="
+    display: none; /* Skjult som standard */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Mørk gjennomsiktig bakgrunn */
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+">
+    <div style="
+        background-color: #111827; /* Mørk boks som matcher app-fargene */
+        color: #ffffff;
+        padding: 30px;
+        border-radius: 16px;
+        max-width: 550px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto; /* Sørger for at man kan scrolle i teksten */
+        position: relative;
+        box-shadow: 0 20px 25px rgba(0,0,0,0.5);
+        border: 1px solid rgba(255,255,255,0.1);
+        text-align: left;
+    ">
+        <!-- Lukkeknapp oppe i hjørnet -->
+        <span id="closePrivacy" style="
+            position: absolute; top: 15px; right: 20px;
+            font-size: 24px; color: #9ca3af; cursor: pointer;
+        ">&times;</span>
+
+        <h2 style="margin-top: 0; font-size: 24px; color: #ffffff;">Privacy Policy for SetNotes</h2>
+        <p style="font-size: 12px; color: #9ca3af;">Last updated: June 2026</p>
+        
+        <p style="color: #d1d5db;">Your privacy is critically important to us. SetNotes is built with a privacy-first mindset. We do not harvest, sell, or track your personal data for marketing purposes.</p>
+        
+        <h3 style="font-size: 16px; margin-top: 20px; color: #ff3b30;">1. Data Storage & iCloud / CloudKit</h3>
+        <p style="color: #9ca3af; font-size: 14px;">SetNotes stores your songs and setlists locally on your device and syncs them securely across your own devices using Apple's iCloud (CloudKit). When you share a setlist via a link, the compressed setlist data is stored anonymously in our secure Apple CloudKit public database so your bandmates can download it. We do not have access to your private iCloud account or your identity.</p>
+        
+        <h3 style="font-size: 16px; margin-top: 20px; color: #ff3b30;">2. Crash Reporting & Analytics</h3>
+        <p style="color: #9ca3af; font-size: 14px;">To help us fix bugs and improve performance, SetNotes uses Sentry to collect anonymous crash logs and diagnostics. This data does not contain any personally identifiable information (PII) and is used strictly for troubleshooting technical errors.</p>
+        
+        <h3 style="font-size: 16px; margin-top: 20px; color: #ff3b30;">3. Third-Party Services</h3>
+        <p style="color: #9ca3af; font-size: 14px;">Apart from Apple CloudKit (for syncing/sharing) and Sentry (for crash reporting), no third-party services are integrated into the app. We do not use any advertising networks or user tracking frameworks.</p>
+        
+        <h3 style="font-size: 16px; margin-top: 20px; color: #ff3b30;">4. Contact Us</h3>
+        <p style="color: #9ca3af; font-size: 14px; margin-bottom: 0;">If you have any questions about this Privacy Policy, please reach out to us at support@setnotes.no.</p>
+    </div>
+</div>
+
+<!-- 3. JAVASCRIPT FOR Å ÅPNE OG LUKKE POP-UPEN -->
+<script>
+    const modal = document.getElementById("privacyModal");
+    const btn = document.getElementById("privacyBtn");
+    const span = document.getElementById("closePrivacy");
+
+    // Åpne pop-up når brukeren klikker på knappen
+    btn.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    // Lukk pop-up når brukeren klikker på (x)
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Lukk pop-up hvis brukeren klikker utenfor selve tekstboksen
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 <!-- FOOTER -->
 <footer>
